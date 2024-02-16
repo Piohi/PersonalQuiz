@@ -16,7 +16,7 @@ final class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let result = calculatingResult(answers: answers)
+        let result = calculationResult(answers: answers)
         resultLabel.text = "Вы - \(result!.key.rawValue)"
         resaltDescription.text = result!.key.definition
         navigationItem.hidesBackButton = true
@@ -27,7 +27,7 @@ final class ResultViewController: UIViewController {
     }
     
     //если сносить и функцию будет выглядеть ещё страшнее
-    private func calculatingResult(answers: [Answer]) -> (key: Animal, value: Int)? {
+    private func calculationResult(answers: [Answer]) -> (key: Animal, value: Int)? {
         answers.compactMap {
             $0.animal
         }.reduce(
